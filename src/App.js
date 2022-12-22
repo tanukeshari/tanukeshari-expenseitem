@@ -51,10 +51,11 @@ function App(){
     Date: new Date (2022, 4, 22)},
    
   ];
-  return (
-    <div>
-      <h2>Lets get started!</h2>
-     
+
+  return(
+    <div  >
+      <h2 >Lets get started!</h2>
+     <div >
       
       <ExpenseItem title={expenses[0].title}
       amount={expenses[0].amount}
@@ -77,9 +78,14 @@ function App(){
       date={expenses[3].date}>
       </ExpenseItem>
 
-      
+      </div>
 
     </div>
+
   );
+  
 }
+
+
+
 export default App;
