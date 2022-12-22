@@ -1,7 +1,6 @@
 function ExpenseItem(props) {
- 
-    const expenseDate= new Date (2022, 10, 21);
-  const expenseTitle= 'food';
+ const expenseDate= new Date (2022, 10, 21);
+const expenseTitle= 'food';
   const expenseAmount= 10;
 
   
