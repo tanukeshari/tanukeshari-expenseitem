@@ -24,7 +24,7 @@
 
 // export default App;
 
-import ExpenseItem from "./ExpenseItem";
+import ExpenseItem from "./expenseitem";
 function App(){
 
   const expenses=[
