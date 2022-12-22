@@ -29,6 +29,8 @@ function App(){
 
   const expenses=[
     {
+
+      
       id:'e1',
       title:'Brush',
       amount:20,
@@ -47,7 +49,7 @@ function App(){
     title:'movies', 
     amount: 200, 
     Date: new Date (2022, 4, 22)},
-    
+   
   ];
   return (
     <div>
@@ -74,6 +76,8 @@ function App(){
       amount={expenses[3].amount}
       date={expenses[3].date}>
       </ExpenseItem>
+
+      
 
     </div>
   );
