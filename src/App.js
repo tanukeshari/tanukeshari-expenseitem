@@ -25,11 +25,11 @@
 // export default App;
 
 
-
+import React from "react";
 
 import ExpenseItem from "./expenseitem";
 function App(){
-
+const app= ()=>{
   const expenses= [
     { id: 'e1',
     title:'food items',
@@ -49,25 +49,39 @@ function App(){
     amount: 100,
      Date: new Date(2022, 2, 21)},
   ];
-return (
-  <div>
-    <h2>lets get started</h2>
-    <ExpenseItem title={expenses[0].title}
-    amount={expenses[0].amount}
-    Date={expenses[0].Date}></ExpenseItem>
+// return React.createElement(
+//   'div',
+//   {},
+//    React.createElement('h1',{},"lets get started!"),
+//    React.createElement(expenses, {items: expenses})
+//    );
 
-    <ExpenseItem title={expenses[1].title}
+
+      /* <ExpenseItem 
+    title={expenses[0].title}
+    amount={expenses[0].amount}
+    Date={expenses[0].Date}
+    />
+
+    <ExpenseItem
+     title={expenses[1].title}
     amount={expenses[1].amount}
-    Date={expenses[1].Date}></ExpenseItem>
+    Date={expenses[1].Date}
+    />
 
 <ExpenseItem title={expenses[2].title}
     amount={expenses[2].amount}
-    Date={expenses[2].Date}></ExpenseItem>
+    Date={expenses[2].Date}/>
 
-<ExpenseItem title={expenses[3].title}
-    amount={expenses[3].amount}
-    Date={expenses[3].Date}></ExpenseItem>
-  </div>
-)
+<ExpenseItem title={expenses[3].title} */
+    /* amount={expenses[3].amount}
+    Date={expenses[3].Date}/> */
+    return (
+      <div>
+        <h2>lets get started</h2>
+    <expenses items ={expenses}/>
+   </div>
+ );
+}
 }
 export default App; 

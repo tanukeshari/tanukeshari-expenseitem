@@ -1,15 +1,22 @@
+import expenseDate from "./expenseDate";
+import card from "./card";
+
+
+
 function expenseitem(props){
-    const expenseDate= new Date(2022, 2, 21);
-    const expenseTitle =('food items');
-    const expenseAmount= 200;
-    return (
-        <div className="expense-item">
-            <div>{ expenseDate.toISOString()}</div>
-            <div className="expense-item_disription">
-                <h2>{expenseTitle}</h2>
-                <div className="expense-item_price"> 200{expenseAmount}</div>
-            </div>
+    return(
+        <card className="expense-item">
+    <div className="expense-item">
+
+        <expenseDate date={props.date}/>
+        <div className='expense-item__desription'>
+            <h2>{props.title}</h2>
+            <div className="expense-item__price">{props.amount}</div>
         </div>
-    );
+    </div>
+</card>
+
+    
+    )
 }
 export default expenseitem;
