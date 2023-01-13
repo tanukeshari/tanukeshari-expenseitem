@@ -1,87 +1,40 @@
-// import logo from './logo.svg';
-// import './App.css';
+//  import Expenseitem from './component/Expenseitem';
+import React from 'react';
+import Expenses from './component/Expenses/Expenses';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React with tanu
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
-import React from "react";
-
-import ExpenseItem from "./expenseitem";
-function App(){
-const app= ()=>{
-  const expenses= [
-    { id: 'e1',
-    title:'food items',
-     amount: 100, Date:
-      new Date(2022, 2, 21)},
+  const App= ()=>{
+    const expenses=[{
+      id:'e1',
+      title:'oil',
+      amount:120,
+      date: new Date(2023,1,1),
+    },
+    {id:'e2',title:'radio',amount:12000, date:new Date(2023,1,12 )},
+    {
+      id:'e3',
+      title:'mobile',
+      amount:10000,
+      date:new Date(2023,1,13),
     
-      { id: 'e2',
-      title:'food items',
-       amount: 100,
-        Date: new Date(2022, 2, 21)},
-    { id: 'e3',
-    title:'food items',
-     amount: 100,
-      Date: new Date(2022, 2, 21)},
-    { id:'e4',
-    title:'food items', 
-    amount: 100,
-     Date: new Date(2022, 2, 21)},
+    },
+    {id:'e4',
+  title:'rice',
+amount:130,
+date: new Date(2023,1,7)},
   ];
-// return React.createElement(
-//   'div',
-//   {},
-//    React.createElement('h1',{},"lets get started!"),
-//    React.createElement(expenses, {items: expenses})
-//    );
 
-
-      /* <ExpenseItem 
-    title={expenses[0].title}
-    amount={expenses[0].amount}
-    Date={expenses[0].Date}
-    />
-
-    <ExpenseItem
-     title={expenses[1].title}
-    amount={expenses[1].amount}
-    Date={expenses[1].Date}
-    />
-
-<ExpenseItem title={expenses[2].title}
-    amount={expenses[2].amount}
-    Date={expenses[2].Date}/>
-
-<ExpenseItem title={expenses[3].title} */
-    /* amount={expenses[3].amount}
-    Date={expenses[3].Date}/> */
-    return (
+  // return React.createElement(
+  //   'div',
+  // {}, 
+  // React.createElement('h2', {}, "Let's get started"),
+  // React.createElement(Expenses, {items:expenses})
+  // );
+    return(
       <div>
-        <h2>lets get started</h2>
-    <expenses items ={expenses}/>
-   </div>
- );
-}
-}
-export default App; 
+        
+        <h2>Lets gets start</h2>
+        <Expenses items={expenses}/>
+          </div>
+    );
+  }
+ export default App; 
