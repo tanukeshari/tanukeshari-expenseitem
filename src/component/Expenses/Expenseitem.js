@@ -1,32 +1,26 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 import './Expenseitem.css';
 
+const Expenseitem = (props) => {
+  const [title, setTitle] = useState(props.title);
+  console.log('Expenseitem evaluated by React');
 
-const  Expenseitem =(props)=>{
-
- const [amount, setTitle]= useState(props.amount);
-  
- const clickHandler = ()=>{
-    setTitle("100");
-  console.log(amount);
+  const clickHandler = () => {
+    setTitle('Updated');
+    console.log(title);
   };
+  return (
+    <Card className="expense-item">
 
-  
-    return(
-      <Card className="expense-item">
-    
-      <ExpenseDate date={props.date }/>      
-    <div className="expense-item__discription"> 
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">{amount}</div>
-   
-    <button onClick={clickHandler()}>changeTitle</button>
-  
-    </div>
-   
- </Card>
-     );
-    }
+      <ExpenseDate date={props.date} />
+      <div className="expense-item__discription">
+        <h2>{title}</h2>
+        <div className="expense-item__price">{props.amount}</div>
+      </div>
+      <button onClick={clickHandler}>Change Title</button>
+    </Card>
+  );
+}
 export default Expenseitem;
