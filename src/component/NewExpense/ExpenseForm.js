@@ -3,21 +3,21 @@ import ExpenseDate from "../Expenses/ExpenseDate";
 
 import './ExpenseForm.css';
 
-const ExpenseForm = () => {
-const [enteredTitle, setEntertitle]=useState('');
-const[enteredAmount, setEnteramount]=useState('');
-const[enterdate,setEnterDate]=useState('');
+const ExpenseForm = (props) => {
+const [enteredTitle, setEnteredTitle]=useState('');
+const[enteredAmount, setEnteredAmount]=useState('');
+const[entereddate,setEnteredDate]=useState('');
     const titleChangeHandler = (event) => {
-        setEntertitle(event.target.value);
+        setEnteredTitle(event.target.value);
         
     }
 
     const amountChangeHandler=(event)=>{
-        setEnteramount(event.target.value);
+        setEnteredAmount(event.target.value);
 
     }
     const datechangeHandler=event=>{
-setEnterDate(event.target.value);
+setEnteredDate(event.target.value);
 
 
     }
@@ -28,17 +28,21 @@ setEnterDate(event.target.value);
         const ExpenseData={
             title:enteredTitle,
             amount:enteredAmount,
-            date:new Date(enterdate),
+            date:new Date(entereddate),
         }
-            console.log(ExpenseData);
+            props.onSaveExpenseData(ExpenseData);
+            setEnteredTitle('');
+            setEnteredAmount('');
+            setEnteredDate('');
         
-    }
+    };
     return (
-        <form onsubmit={submitHandler}>
+        <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>ExpenseTitle</label>
-                    <input type="text"
+                    <input type="text" 
+                    value={enteredTitle}
                     onChange={titleChangeHandler} />
 
                 </div>
@@ -47,6 +51,7 @@ setEnterDate(event.target.value);
                     <input type="number" 
                     min="0.01" 
                     step="0.01" 
+                    value={enteredAmount}
                     onChange={amountChangeHandler} />
 
                 </div>
@@ -55,6 +60,7 @@ setEnterDate(event.target.value);
                     <input type="Date"
                      min="2020|01|01"
                       max="2023|12|31"
+                      value={entereddate}
                        onChange={datechangeHandler} />
 
                 </div>
