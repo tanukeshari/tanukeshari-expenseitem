@@ -16,7 +16,7 @@ const[entereddate,setEnteredDate]=useState('');
         setEnteredAmount(event.target.value);
 
     }
-    const datechangeHandler=event=>{
+    const datechangeHandler=(event)=>{
 setEnteredDate(event.target.value);
 
 
@@ -29,6 +29,38 @@ setEnteredDate(event.target.value);
             title:enteredTitle,
             amount:enteredAmount,
             date:new Date(entereddate),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
             props.onSaveExpenseData(ExpenseData);
             setEnteredTitle('');
