@@ -1,23 +1,23 @@
 import React from 'react';
 import './ExpenseFilter.css';
 
-const ExpenseFilter=(props)=>{
-    const dropdownChangeHandler=(event)=>{
-        props.onChangeHandler(event.target.value);
+const ExpenseFilter = (props) => {
+    const dropdownChangeHandler = (event) => {
+        props.onChangeFilter(event.target.value);
 
     };
-    return(
+    return (
         <div className='expense-filter'>
             <div className='expense-filter__control'>
                 <label>Filter by Year</label>
-                <select value ={props.select} on onChange={dropdownChangeHandler}>
+                <select value={props.selected} onChange={dropdownChangeHandler}>
                     <option value="2022">2022</option>
                     <option value="2021">2021</option>
                     <option value="2020">2020</option>
                     <option value="2019">2019</option>
                 </select>
             </div>
-            </div>
-    )
-}
+        </div>
+    );
+};
 export default ExpenseFilter;

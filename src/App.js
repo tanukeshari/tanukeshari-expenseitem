@@ -1,40 +1,50 @@
+   import React, { useState }from 'react';
    
-import React from 'react';
    import NewExpense from './component/NewExpense/NewExpense';
  import Expenses from './component/Expenses/Expenses';
 
-const App = () => {
-  const expenses = [{
+
+  const DUMMY_EXPENSES = [
+    {
     id: 'e1',
     title: 'oil',
     amount: 120,
-    date: new Date(2023, 1, 1),
+    date: new Date(2020, 1, 1),
   },
-  { id: 'e2', title: 'radio', amount: 12000, date: new Date(2023, 1, 12) },
+
+  { id: 'e2', title: 'radio', amount: 12000, date: new Date(2022, 1, 12) },
   {
     id: 'e3',
     title: 'mobile',
     amount: 10000,
-    date: new Date(2023, 1, 13),
+    date: new Date(2022, 1, 13),
 
   },
   {
     id: 'e4',
     title: 'rice',
     amount: 130,
-    date: new Date(2023, 1, 7)
+    date: new Date(2019, 1, 7)
   },
   ]
-  const addExpenseHandler=(expense)=>{
-console.log('in app.js');
-console.log(expense);
 
-  }
+  const App = () => {
+  const[expenses, setExpenses] = useState(DUMMY_EXPENSES);
+        
+    const addExpenseHandler = (expense) => { 
+         setExpenses((prevExpenses) => {
+          return [expense, ...prevExpenses];
+        });
+
+
+  };
   return (
     <div>
-        <NewExpense onAddExpense={addExpenseHandler}/>  
+        <NewExpense onAddExpense={addExpenseHandler} />  
       <Expenses items={expenses} />
     </div>
   );
 }
-export default App; 
+
+export default App;
+
