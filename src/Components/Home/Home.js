@@ -9,6 +9,6 @@ const Home = (props) => {
       <h1>Welcome back!</h1>
     </Card>
   );
-};
+  };
 
 export default Home;
